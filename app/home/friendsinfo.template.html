@@ -1,0 +1,16 @@
+<img src="../img/coverpic.jpg" width="100%" height="300px" class="coverpic">
+<img ng-src="{{pic}}" width="12%" height="135px" class="profilepic">
+<div ng-repeat="user in userDetails | filter: friend " class="about">
+   <p> Name :
+        <span>{{user.firstName}} {{user.lastName}}</span></p>
+    
+   <p> Email Id :
+        <span>{{user.loginId}}</span></p>
+    
+    <div ng-hide="checkId(user.loginId)">
+        <button  class="logOutBtn" ng-click="createFriend(user.loginId)">Add friend</button>
+    </div>
+    <div ng-show="checkId(user.loginId)">
+            <button  class="logOutBtn" ng-click="deleteFriend(user.loginId)">Block friend</button>
+        </div>
+</div>

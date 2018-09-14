@@ -1,0 +1,57 @@
+
+
+<div ng-app="signup">
+
+  <header class="mainHeader">
+    <b>facebook</b>
+  </header>
+
+  <div class="Content">
+
+    <img src="../img/fbconnect.jpg" class="networkImg" width="60%;" height="100%;">
+
+    <form class="formSignup" name="formSignup" ng-submit="signingup()" ng-model="formSignup" novalidate>
+      <p>Sign Up</p>
+      <div>Name
+        <input type="text" name="firstname" placeholder="Enter a valid first name" class="right signupInput" ng-model="firstname"
+          required>
+        <div ng-show="formSignup.$submitted || formSignup.firstname.$touched" class="errorMsg">
+          <span ng-show="formSignup.firstname.$error.required">Enter your Firstname.</span>
+        </div>
+
+      </div>
+      <div>Lastname
+        <input type="text" name="lastname" placeholder="Enter a valid last name" class="right signupInput" ng-model="lastname" required>
+        <div ng-show="formSignup.$submitted || formSignup.lastname.$touched" class="errorMsg">
+          <span ng-show="formSignup.lastname.$error.required">Enter your Lastname.</span>
+        </div>
+      </div>
+      <div>Email
+        <input type="email" name="email" placeholder="Enter a valid Email Id" class="right signupInput" ng-model="email" required>
+        <div ng-show="formSignup.$submitted || formSignup.email.$touched" class="errorMsg">
+          <span ng-show="formSignup.email.$error.required">Enter your email.</span>
+          <span ng-show="formSignup.email.$error.email">This is not a valid email.</span>
+        </div>
+      </div>
+      <div>Password
+        <input type="password" name="password" placeholder="Password ranging 8-16 words" class="right signupInput" ng-minlength="8"
+          ng-maxlength="16" ng-model="password" required>
+        <div ng-show="formSignup.$submitted || formSignup.password.$touched" class="errorMsg">
+          <span ng-show="formSignup.password.$invalid">Enter minimum 8 and maximun 16 characters.</span>
+        </div>
+      </div>
+      <div>Date-of-Birth
+        <input type="date" class="right signupInput" ng-model="dateofbirth">
+      </div>
+      <div>Gender
+        <select ng-model="gender" class="gender">
+          <option type="radio" name="gender" value="Male" selected>Male</option>
+          <option type="radio" name="gender" value="Female">Female</option>
+          <option type="radio" name="gender" value="other">other</option>
+        </select>
+      </div>
+      <button type="submit" value="Login">Sign Up</button>
+      <div class="errorMsg"><span ng-show="SignupSubmitMsg" >Signup not Successful</span></div>
+    </form>
+  </div>
+</div>

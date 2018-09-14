@@ -1,0 +1,32 @@
+
+<div ng-app="login">
+  <header class="mainHeader">
+    <b>facebook</b>
+  </header>
+
+  <form class="formLogin" name="formLogin" ng-submit="send()" novalidate>
+    <img src="../img/fblogo.png" height="55px" width="55px" style="margin-bottom:20px">
+    <p style="margin:0 0 20px 0">Log into facebook</p>
+
+    <div>
+      <input type="email" name="email" placeholder="Email" ng-model="email" class="loginInput" required>
+      <div ng-show="formLogin.$submitted || formLogin.email.$touched" class="errorMsg">
+        <span ng-show="formLogin.email.$error.required">Enter your email.</span>
+        <span ng-show="formLogin.email.$error.email">This is not a valid email.</span>
+      </div>
+    </div>
+    <br>
+    <div>
+      <input type="password" name="password" placeholder="Password" ng-model="password" class="loginInput" minlength="8" maxlength="16"
+        required>
+      <div ng-show="formLogin.$submitted || formLogin.password.$touched" class="errorMsg">
+        <span ng-show="formLogin.password.$error.required">Enter your password.</span>
+      </div>
+    </div>
+    <br>
+    <button type="submit" value="Login" class="loginButton" style="margin:0 0 20px 0">Log In</button>
+    <div><span ng-show="loginSubmitMsg" class="errorMsg">Login not Successful</span></div>
+    <br>
+    <a ng-href="/signup">Sign up for facebook</a>
+  </form>
+</div>

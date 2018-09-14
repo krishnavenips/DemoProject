@@ -1,0 +1,416 @@
+* {
+    box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+    margin: 0; 
+    font-family: 'Vollkorn', serif;
+    font-size: 20px;
+    background-color: rgba(243, 242, 242, 0.932); 
+    }
+    .mainHeader{
+    background-color: rgba(23, 75, 143, 0.932);
+    font-size: 40px;
+    color: #fff;
+    padding: 2% 2% 1% 6%;
+    display: flex;
+    }
+    .formLogin{ 
+    font-weight: bold; 
+    background-color: #fff;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    padding: 4% 3% 4% 3%;
+    margin-top: 5%;
+    }
+    input{
+    width: 70% ;
+    height: 30px;
+    padding: 0px 0px 0px 3px;
+    }
+    .formLogin button{
+    background-color: rgba(23, 75, 143, 0.932);
+    border: 0;
+    height: 30px;
+    width: 70%;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Vollkorn', serif;
+    }
+    .formLogin a{
+    text-decoration: none;
+    font-size: 15px;
+    color: rgba(23, 75, 143, 0.932);
+    cursor: pointer;
+    }
+    .errorMsg{
+    font-size: 15px;
+    color: brown;
+    display: hidden;
+    } 
+    .Content{
+    display: flex;
+    justify-content: space-around;
+    }
+    .formSignup{ 
+    line-height: 50px;
+    color: rgba(23, 75, 143, 0.932);; 
+    font-weight: bold; 
+    padding-right: 5%;
+    text-align: right;
+    width: 50%;
+    margin: 0;
+    background-color: rgba(243, 242, 242, 0.932); 
+    padding-left: 20px;
+    }
+    .formSignup p{
+    text-align: center;
+    }
+    .gender{
+    width: 70%;
+    height: 30px;
+    }
+    .formSignup button , .logOutBtn{ 
+    background-color:rgb(34, 175, 34);
+    border: 0;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Vollkorn', serif;
+    }
+   
+    /* ---------------......................................----home------..................................................------- */
+
+    .topnav{
+background-color: rgba(23, 75, 143, 0.932);
+color: #fff;
+padding: 1% 2% 1% 2%;
+display: flex;
+justify-content: space-between;
+}
+.suffix{
+height: 30px;
+background-color: #fff;
+color:rgba(23, 75, 143, 0.932) ;
+border: 0; 
+cursor: pointer;
+}
+#homeIcon, #profileIcon{
+cursor: pointer;
+font-size: 30px;
+}
+.homeLabel, .profileLabel{
+font-size: 20px;
+}
+    
+        
+    .contents{
+    display: flex;
+    }
+
+
+
+        .friendsButton{
+        width: 96%;
+        margin: 2%;
+        height: 70px;
+        background-color: rgba(243, 242, 242, 0.932); 
+        color: rgba(23, 75, 143, 0.932);
+        font-family: 'Vollkorn', serif;
+        font-size: 20px;
+        border: 0;
+        }
+        .logOutBtn{
+            background-color:rgb(34, 175, 34);
+            border: 0;
+            border-radius: 10px;
+            height: 30px;
+            width: 100px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 1% 1% 2% 1%;
+            font-family: 'Vollkorn', serif;
+            
+            }
+        .headerImg{
+            border-style: solid 0px;
+            border-radius: 50%;
+        }
+        /* ------------------homepage content------------------- */
+        .homePageContents{
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        height: 1000px;
+        width: 100%;
+        }
+     
+        .userInfo{
+        width:24%;
+        min-height: 100%;
+        background-color: #fff;
+        margin: 1% 0 0 1%;
+        }
+        .userInfo p{
+        font-size: 15px;
+        font-weight: 400;
+        color: rgba(23, 75, 143, 0.932);
+        padding : 0;
+        }
+        .userInfoBtn{
+        background-color: rgba(243, 242, 242, 0.932); 
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        padding: 1%;
+        margin: 1% 0 1% 0; 
+        width: 70%;
+        height: 5%;
+        color: rgba(23, 75, 143, 0.932);
+        font-family: 'Vollkorn', serif;
+        font-size: 15px;
+        font-weight: bold;
+        }
+        
+        .userInfo img{
+            margin: 10%;
+        }
+        .userInfo a{
+        margin: 10%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 900;
+        }
+        .userPosts{
+        width:48%;
+        min-height: 100%;
+        background-color: rgba(243, 242, 242, 0.932); 
+        margin:1%;
+        }
+        .userFriends{
+       
+        width: 24%;
+        height:100%;
+        background-color: #fff;
+        margin: 1% 1% 0 0;;
+        }
+        .homeheader{
+            width: 100%;
+            height: 50px;
+            background-color: rgba(23, 75, 143, 0.932);
+            color: white;
+            text-align: center;
+            padding: 3%;
+            font-weight: 800;
+        }
+        .friendsButton{
+        width: 98%;
+        margin: 1%;
+        height: 70px;
+        font-size: 15px;
+        }
+        .createPost{
+        min-height: 150px;
+        background-color: #fff;
+        align-items: center;
+        padding: 0 0 5% 0;
+        border-radius: 8px;
+        }
+        .createPost img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 2%;
+        }
+        textarea{
+        margin-top: 4%;
+        margin-bottom: 2%;
+        width: 78%;
+        height: 50px;
+        border: 0px;
+        resize: none;
+        outline: 0;
+        padding: 3% 0 0 2%;
+        margin-left: 10px;
+        }
+        .createPostBtn{
+        background-color: rgba(243, 242, 242, 0.932); 
+        border-radius: 30%;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        padding: 1%;
+        margin: 1% 0 1% 0;
+        }
+        .allPosts{
+        background-color: #fff;
+        min-height: 80%;
+        margin: 2% 0 0 0;
+        border-radius: 8px;
+        padding-top: 1%;
+        }
+        .postli{
+        text-decoration: none;
+        margin-top: 2%;
+        }
+        .postcard{
+            background-color: rgba(161, 167, 167, 0.418);
+            height: auto;
+            width: 90%;
+            margin:8% 3% 3% 5%;
+            
+            }
+            .postcard span{
+                padding :5px;
+
+            }
+            .likeBtn, .dislikeBtn{
+           
+                background-color: rgba(23, 75, 143, 0.932);
+                border: 0;
+                border-radius: 10px;
+                height: 20px;
+                width: 50px;
+                color: #fff;
+                font-weight: bold;
+                cursor: pointer;
+                font-family: 'Vollkorn', serif;
+                
+                }
+            .imgload{
+                width: 100%;
+                height: 60%;
+                margin: 0;
+                padding: 0;
+            }
+            .postText{
+                min-height: 40px;
+            }
+            .postinput{
+                padding: 0 0 0 2%;
+                height: auto;
+            }
+            .postCompose{
+                padding: 5% ;
+            }
+ 
+    /* ----------.......................................---------profile contents----------...........................................--------- */
+    .profileContents{
+    width: 100%;
+    }
+    .coverpic{
+    position: relative;
+    }
+    .profilepic{
+    position: absolute;
+    top: 30%;
+    left: 2%;
+    }
+    .profileNavi{
+    height: 50px;
+    background-color: white;
+    padding: 0 0 0 38%;
+    }
+    .profileNavi a{
+    padding-left: 8%;
+    font-size: 20px;
+    font-weight: bold;
+    } 
+    .profileShow
+    {
+        width: 95%;
+        height:300px;
+        margin: 2%;
+        padding: 2%;
+        background-color: #fff;
+        font-size: 15px;
+    }
+    .about{
+        width: 98%;
+        min-height:300px;
+        background-color: #fff;
+        margin: 2%;
+        padding: 8%;
+        color: rgba(23, 75, 143, 0.932);
+        font-weight: bold;
+        height: 300px;
+        }
+        .about span{
+            padding-left: 23%;
+        }
+.friends{
+    width: 98%;
+        height:300px;
+        background-color: #fff;
+        margin: 2%;
+        padding: 5%;
+}
+    .photos{
+        width: 98%;
+        height:300px;
+        background-color: #fff;
+        margin: 2%;
+        padding: 5%;
+        }
+    .friends button{
+        width: 30%;
+        height: 100px;
+    }
+    .friends i{
+        width: 67%;
+    height: 18%;
+    }
+
+
+
+
+    /*...............................................@media.......................................................*/
+    @media screen and (max-width:375px){
+        .formLogin{
+            width:100%;
+        }
+        }
+    @media screen and (max-width: 768px){
+        .networkImg{
+        display: none;
+        }
+        .Content{
+        text-align: center;
+        margin: auto;
+        }
+        .formSignup{
+        width: 100%;
+        text-align: right;
+        margin: auto;
+        padding: 0 10% 0 10%;
+        }
+        .formSignup input{
+        width: 70% ;
+        height: 30px;
+        padding: 0px 0px 0px 3px
+        }
+        .homeLabel{
+        display: none;
+        }
+        .profileLabel{
+        display: none;
+        }
+        .userInfo{
+        display: none;
+        }
+        .userPosts{
+        width: 70%;
+        }
+       
+        }
+        @media screen and (max-width: 320px){
+        .formSignup input{
+        width: 59%;
+        }
+        }

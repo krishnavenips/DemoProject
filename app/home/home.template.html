@@ -1,0 +1,104 @@
+<div ng-app="home">
+    <header class="topnav">
+
+        <form class="searchContainer">
+            <img src="../img/fblogo.png" height="30px" width="30px">
+            <input type="text" class="validate" ng-change="searchRequest()" list="searchs" ng-model="user">
+            <datalist id="searchs">
+                <option ng-repeat="searchOutput in searchResult">{{searchOutput.firstName}}</option>
+            </datalist>
+            <button class="suffix" type="submit" ng-click="infoPrint(user)">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+        <a ng-click="showHome()" title="Home">
+            <i class="fa fa-home" id="homeIcon" aria-hidden="true">
+                <span class="homeLabel">Home</span>
+            </i>
+        </a>
+        <a ng-click="showProfile()" title="Profile">
+            <i class="fa fa-user" id="profileIcon" aria-hidden="true">
+                <span class="profileLabel">Profile</span>
+            </i>
+        </a>
+        <button class="logOutBtn" ng-click="logout()">Log out</button>
+    </header>
+     <div class="contents" ng-switch="homeShow">
+        <div class="homePageContents" ng-switch-when="home">
+
+            <div class="userInfo" id="home">
+                <div class="homeheader">User Information</div>
+                <img ng-src="{{pic}}" width="45%" height="10%">
+                <p> {{firstName}} {{lastName}} </p>
+                <button class="userInfoBtn" ng-click="userinfoshow=true">Know More About Me</button>
+                <userinfo ng-show="userinfoshow" class="userprint"></userinfo>
+                <button class="userInfoBtn" ng-click="friendshow=true">See My Friends</button>
+
+                <friends ng-show="friendshow"></friends>
+                <button class="userInfoBtn">My Photos</button>
+            </div>
+     <div class="userPosts" id="home">
+                <div class="createPost">
+                    <form name="myForm">
+                        <div class="homeheader">Compose Post Here..</div>
+                        <div class="postCompose">
+                            <img ngf-thumbnail="picFile" class="thumb" alt="image">
+                            <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+                            <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="10MB" ngf-model-invalid="errorFile">
+                            <input type="text" class="postinput" name="postContent" ng-model="postContent" placeholder="Write Something Here......."
+                                size="31" required>
+                            <i ng-show="myForm.file.$error.maxSize">File too large max 10M</i>
+                            <br>
+                            <button ng-disabled="!myForm.$valid" class="logOutBtn" ng-click="uploadPic(picFile,postContent)">Post</button>
+                            <span class="progress" ng-show="picFile.progress >= 0">
+                            </span>
+                            <br>
+                            <span ng-show="picFile.result">Upload Successful</span>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="allPosts">
+                    <div class="postcard" ng-repeat="post in allpost">
+                        <img ng-src="http://10.4.6.88:5000/{{post.media}}" ng-if="post.media!='no-file'" class="imgload">
+                        <div class="postText">{{post.content}}</div>
+                        <button class="likeBtn" ng-click="likeFunction(post)" ng-bind="post.likes">
+                            <i class="fa fa-thumbs-up" aria-hidden="true">
+                            </i> {{post.likes}}</button><span>likes</span>
+                        <button class="dislikeBtn" ng-click="dislikeFunction(post)" ng-bind="post.dislikes">
+                            <i class="fa fa-thumbs-down" aria-hidden="true"></i>{{post.dislikes}} </button><span>dislikes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="userFriends" id="home">
+                <div class="homeheader">Friends List</div>
+                <friends></friends>
+            </div>
+        </div>
+        <div friendsinfo ng-switch-when="friendsinfo"></div>
+        <div class="profileContents" ng-switch-when="profile">
+            <img src="../img/coverpic.jpg" width="100%" height="300px" class="coverpic">
+            <img ng-src="{{pic}}" width="12%" height="135px" class="profilepic">
+            <div class="profileNavi">
+                <a ng-click="profileAboutShow()">About</a>
+                <a ng-click="profileFriendsShow()">Friends</a>
+                <a ng-click="profilePhotosShow()">Photos</a>
+            </div>
+            <div ng-switch="profilenavigation">
+                <div ng-switch-when="about" class="about">
+                    <userinfo></userinfo>
+                </div>
+                <div ng-switch-when="friends" class="friends">
+                    <friends></friends>
+                </div>
+                <div ng-switch-when="photos" class="photos">
+                    <img style="padding: 2%" ng-src={{picIcon}}>
+                    <img style="padding: 2%" ng-src={{picIcon}}>
+                    <img style="padding: 2%" ng-src={{picIcon}}>
+                    <img style="padding: 2%" ng-src={{picIcon}}>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</div>
